@@ -1,12 +1,10 @@
 import React from 'react';
-import { Button, Input } from 'antd';
 import { LoginForm } from '../../../features/ui/LoginForm';
-
+import { PageWrapper } from './LoginPage.styles';
 export const LoginPage = () => {
   return (
-    <div
-      style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <PageWrapper>
       <LoginForm />
-    </div>
+    </PageWrapper>
   );
 };

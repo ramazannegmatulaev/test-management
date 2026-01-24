@@ -1,9 +1,5 @@
 import React from 'react';
-import { UsersPage } from '../pages/users/ui/UsersPage';
+import { AppRouter } from './providers/router';
 export const App = () => {
-  return (
-    <div>
-      <UsersPage />
-    </div>
-  );
+  return <AppRouter />;
 };

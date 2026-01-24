@@ -14,10 +14,12 @@
     "@tanstack/react-query": "^4.42.2",
     "antd": "^5.29.3",
     "axios": "^1.13.2",
+    "dayjs": "^1.11.19",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-query": "^4.0.0",
-    "react-router-dom": "^6.30.3"
+    "react-router-dom": "^6.30.3",
+    "styled-components": "^6.3.8"
   },
   "devDependencies": {
     "@types/react": "^16.14.68",
