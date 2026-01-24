@@ -12,10 +12,10 @@ export const UsersTable = ({ users, onEdit }: UsersTableProps) => {
   return (
     <List>
       {users.map((user) => (
-        <Row key={user.id} onClick={() => onEdit(user)}>
-          <StyledAvatar src={user.avatar} />
+        <Row key={user.id}>
+          <StyledAvatar onClick={() => onEdit(user)} src={user.avatar} />
           <Info>
-            <Name>{user.name}</Name>
+            <Name onClick={() => onEdit(user)}>{user.name}</Name>
             <Meta>Зарегистрирован: {formatDate(user.createdAt)}</Meta>
           </Info>
         </Row>

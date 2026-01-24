@@ -1,11 +1,16 @@
-const AUTH_KEY = 'isAuth';
+const AUTH_KEY = 'token';
+
 export const authStore = {
-  isAuth(): boolean {
-    return localStorage.getItem(AUTH_KEY) === 'true';
+  getToken(): string | null {
+    return localStorage.getItem(AUTH_KEY);
   },
 
-  login() {
-    localStorage.setItem(AUTH_KEY, 'true');
+  isAuth(): boolean {
+    return Boolean(this.getToken());
+  },
+
+  login(token: string) {
+    localStorage.setItem(AUTH_KEY, token);
   },
 
   logout() {

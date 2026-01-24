@@ -14,13 +14,14 @@ export const EditUserModal = ({ open, user, onClose }: EditUserModalProps) => {
   const { mutate, isLoading } = useEditUser();
 
   useEffect(() => {
-    if (user) {
+    if (user && open) {
       form.setFieldsValue({
+        id: user.id,
         name: user.name,
         avatar: user.avatar,
       });
     }
-  }, [user, form]);
+  }, [user, open, form]);
 
   const handleFinish = (values: { name: string; avatar: string }) => {
     if (!user) return;
@@ -34,6 +35,7 @@ export const EditUserModal = ({ open, user, onClose }: EditUserModalProps) => {
       },
     );
   };
+
   return (
     <Modal
       title="Редактировать пользователя"
@@ -43,6 +45,9 @@ export const EditUserModal = ({ open, user, onClose }: EditUserModalProps) => {
       confirmLoading={isLoading}
       okText="Сохранить изменения">
       <Form form={form} layout="vertical" onFinish={handleFinish}>
+        <Form.Item label="id" name="id">
+          <Input disabled />
+        </Form.Item>
         <Form.Item label="Имя" name="name" rules={[{ required: true }]}>
           <Input />
         </Form.Item>
