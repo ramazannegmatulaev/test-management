@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, Form, Input } from 'antd';
+import { Modal, Form, Input, Button } from 'antd';
 import { useCreateUser } from '../model/useCreateUser';
 
 interface CreateUserModalProps {
@@ -24,19 +24,20 @@ export const CreateUserModal = ({ open, onClose }: CreateUserModalProps) => {
 
   return (
     <Modal
-      title="Создать пользователя"
+      title="Создание пользователя"
       open={open}
-      onOk={handleSubmit}
       onCancel={onClose}
+      onOk={handleSubmit}
       confirmLoading={isLoading}
-      okText="Создать">
+      okText="Создать"
+      cancelText="Отмена">
       <Form form={form} layout="vertical">
         <Form.Item label="Имя" name="name" rules={[{ required: true, message: 'Введите имя' }]}>
           <Input />
         </Form.Item>
 
         <Form.Item
-          label="Аватар (URL)"
+          label="Ссылка на аватарку"
           name="avatar"
           rules={[{ required: true, message: 'Введите ссылку на аватар' }]}>
           <Input />

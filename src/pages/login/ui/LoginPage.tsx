@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button, Input } from 'antd';
+import { LoginForm } from '../../../features/ui/LoginForm';
 
 export const LoginPage = () => {
   return (
-    <form action="">
-      <Input type="text" placeholder="Введите логин" />
-      <Input.Password type="password" placeholder="Введите пароль" />
-      <Button>Войти</Button>
-    </form>
+    <div
+      style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <LoginForm />
+    </div>
   );
 };

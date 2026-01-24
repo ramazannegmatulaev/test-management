@@ -3,7 +3,7 @@ import axios from 'axios';
 import { User } from '../../../entities/model/types';
 
 interface EditUser {
-  id: number;
+  id: string;
   name: string;
   avatar: string;
 }
